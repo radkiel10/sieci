@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title> Model OSI</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="style.css">
+
+    <p class="temat1"> Model OSI</p>
+    <div class="pic">
+    </div>
+    <div align="justify">
+        <b>Model OSI</b> (pełna nazwa ISO OSI RM, <i>ang. ISO Open Systems Interconnection Reference Model</i> - model odniesienia łączenia systemów otwartych) - standard zdefiniowany przez ISO oraz ITU-T opisujący strukturę komunikacji sieciowej.
+        <br><br>
+        <b>Międzynarodowa Organizacja Normalizacyjna </b><i>(ang. International Organization for Standardization</i> na początku lat osiemdziesiątych dostrzegła potrzebę stworzenia modelu sieciowego, dzięki któremu producenci mogliby opracowywać współpracujące
+        ze sobą rozwiązania sieciowe. W taki sposób powstała specyfikacja<i> Open Systems Interconnection Reference Model</i>, która do polskich norm została zaadaptowana w 1995 roku.
+        <br><br>
+        <b>Model ISO OSI RM</b> jest traktowany jako model odniesienia (wzorzec) dla większości rodzin protokołów komunikacyjnych. Podstawowym założeniem modelu jest podział systemów sieciowych na 7 warstw <i>(ang. layers)</i> współpracujących ze sobą
+        w ściśle określony sposób. Został przyjęty przez ISO w 1984 roku a najbardziej interesującym organem jest wspólny komitet powołany przez ISO/IEC, zwany <b>Joint Technical Committee 1- Information Technology</b><i> (JTC1)</i>. Formalnie dzieli
+        się jeszcze na podkomitety SC.
+        <br><br> Dla Internetu sformułowano uproszczony Model TCP/IP, który ma tylko 4 warstwy. <br><br>
+
+        <font size="4" color="purple"><b><i>Warstwy OSI</i></b></font><br>
+        <ul type="disk" style="color: purple">
+            <li><span style="color: black"><b>Warstwa 7: aplikacji</b><br>
+Warstwa aplikacji jest warstwą najwyższą, zajmuje się specyfikacją interfejsu, który wykorzystują aplikacje do przesyłania danych do sieci (poprzez kolejne warstwy modelu ISO/OSI). W przypadku sieci komputerowych aplikacje są zwykle procesami uruchomionymi na odległych hostach. Interfejs udostępniający programistom usługi dostarczane przez warstwę aplikacji opiera się na obiektach nazywanych gniazdami <i>(ang. socket)</i>.
+Jeżeli użytkownik posługuje się oprogramowaniem działającym w architekturze klient-serwer, zwykle po jego stronie znajduje się klient, a serwer działa na maszynie podłączonej do sieci świadczącej usługi równocześnie wielu klientom. Zarówno serwer, jak i klient znajdują się w warstwie aplikacji. Komunikacja nigdy nie odbywa się bezpośrednio między tymi programami. Kiedy klient chce przesłać żądanie do serwera, przekazuje komunikat w dół do warstw niższych, które fizycznie przesyłają go do odpowiedniej maszyny, gdzie informacje ponownie wędrują w górę i są ostatecznie odbierane przez serwer. Jednocześnie zapewnia interfejs między aplikacjami, których używamy, a siecią (umożliwia komunikację).</span></li>
+            <li><span style="color: black"><b>Warstwa 6: prezentacji</b><br>
+Podczas ruchu w dół zadaniem warstwy prezentacji jest przetworzenie danych od aplikacji do postaci kanonicznej <i>(ang. canonical representation)</i> zgodnej ze specyfikacją OSI-RM, dzięki czemu niższe warstwy zawsze otrzymują dane w tym samym formacie. Kiedy informacje płyną w górę, warstwa prezentacji tłumaczy format otrzymywanych danych na zgodny z wewnętrzną reprezentacją systemu docelowego. Wynika to ze zróżnicowania systemów komputerowych, które mogą w różny sposób interpretować te same dane. Dla przykładu bity w bajcie danych w niektórych procesorach są interpretowane w odwrotnej kolejności niż w innych. Warstwa ta odpowiada za kodowanie i konwersję danych oraz za kompresję / dekompresję; szyfrowanie / deszyfrowanie. Warstwa prezentacji obsługuje np. MPEG, JPG, GIF itp. </span></li>
+            <li><span style="color: black"><b>Warstwa 5: sesji</b><br>
+Warstwa sesji otrzymuje od różnych aplikacji dane, które muszą zostać odpowiednio zsynchronizowane. Synchronizacja występuje między warstwami sesji systemu nadawcy i odbiorcy. Warstwa sesji "wie", która aplikacja łączy się z którą, dzięki czemu może zapewnić właściwy kierunek przepływu danych - nadzoruje połączenie. Wznawia je po przerwaniu. </span></li>
+            <li><span style="color: black"><b>Warstwa 4: transportowa</b><br>
+Warstwa transportowa segmentuje dane oraz składa je w tzw. strumień. Warstwa ta zapewnia całościowe połączenie między stacjami: źródłową oraz docelową, które obejmuje całą drogę transmisji. Następuje tutaj podział danych na części, które są kolejno indeksowane i wysyłane do docelowej stacji. Na poziomie tej warstwy do transmisji danych wykorzystuje się dwa protokoły TCP <i>(ang. Transmission Control Protocol)</i> oraz UDP <i>(ang. User Datagram Protocol)</i>. W przypadku gdy do transmisji danych wykorzystany jest protokół TCP stacja docelowa po odebraniu segmentu wysyła potwierdzenie odbioru. W wyniku niedotarcia któregoś z segmentów stacja docelowa ma prawo zlecić ponowną jego wysyłkę (kontrola błędów transportu). W przeciwieństwie do protokołu TCP w protokole UDP nie stosuje się potwierdzeń. Protokół UDP z racji konieczności transmisji mniejszej ilości danych zazwyczaj jest szybszy od protokołu TCP, jednakże nie gwarantuje dostarczenia pakietu. Oba protokoły warstwy transportowej stosują kontrolę integralności pakietów, a pakiety zawierające błędy są odrzucane. </span></li>
+            <li><span style="color: black"><b>Warstwa 3: sieciowa</b><br>
+Warstwa sieciowa jako jedyna dysponuje wiedzą dotyczącą fizycznej topologii sieci. Rozpoznaje, jakie drogi łączą poszczególne komputery (trasowanie) i decyduje, ile informacji należy przesłać jednym z połączeń, a ile innym. Jeżeli danych do przesłania jest zbyt wiele, to warstwa sieciowa po prostu je ignoruje. Nie musi zapewniać pewności transmisji, więc w razie błędu pomija niepoprawne pakiety danych. Standardowa paczka danych czasami oznaczana jest jako NPDU <i>(ang. Network Protocol Data Unit)</i>. Nie znajdują się w nim żadne użyteczne dla użytkowników dane. Jedyne jego zadanie, to zapewnienie sprawnej łączności między bardzo odległymi punktami sieci. Routery są podstawą budowy rozległych sieci informatycznych takich jak Internet, bo potrafią odnaleźć najlepszą drogę do przekazania informacji. Warstwa sieciowa podczas ruchu w dół umieszcza dane wewnątrz pakietów zrozumiałych dla warstw niższych (kapsułkowanie). Jednocześnie warstwa sieci używa czterech procesów (adresowanie, enkapsulacja, routing, dekapsulacja). Protokoły warstwy sieci to: (IPv4, IPv6, ICMP, NOVELL IPX, APPLE TALK, CLNS/DECN itd.).</span></li>
+            <li><span style="color: black"><b>Warstwa 2: łącza danych</b><br>
+Warstwa łącza danych jest czasami nazywana warstwą liniową lub kanałową. Ma ona nadzorować jakość przekazywanych informacji. Nadzór ten dotyczy wyłącznie warstwy niższej. Warstwa łącza danych ma możliwość zmiany parametrów pracy warstwy fizycznej, tak aby obniżyć liczbę pojawiających się podczas przekazu błędów. Zajmuje się pakowaniem danych w ramki i wysyłaniem do warstwy fizycznej. Rozpoznaje błędy związane z gubieniem pakietów oraz uszkodzeniem ramek i zajmuje się ich naprawą. Podczas ruchu w dół w warstwie łącza danych zachodzi enkapsulacja pakietów z warstwy sieciowej tak, aby uzyskać ramki zgodne ze standardem. Czasami są one oznaczane jako LPDU <i>(ang. data Link Protocol Data Unit)</i>.
+<br>
+Ramka danych przeważnie składa się z:
+<ul type="circle" style="color: purple">  
+<li><span style="color: black">    ID odbiorcy - najczęściej adres MAC stacji docelowej lub bramy domyślnej,</span></li>
+            <li><span style="color: black">    ID nadawcy - najczęściej adres MAC stacji źródłowej,</span></li>
+            <li><span style="color: black">    informacja sterująca - zawiera dane o typie ramki, trasowaniu, segmentacji itp.,</span></li>
+            <li><span style="color: black">    CRC <i>(ang. Cyclic Redundancy Check)</i> - kod kontroli cyklicznej - odpowiada za korekcję błędów i weryfikację poprawności danych otrzymywanych przez stację docelową.</span></li>
+        </ul>
+        Warstwa łącza danych dzieli się na dwie podwarstwy:
+        <ul type="circle" style="color: purple">
+            <li><span style="color: black">    LLC <i>(ang. logical link control)</i> - sterowania łączem danych - kontroluje poprawność transmisji i współpracuje przede wszystkim z warstwą sieciową w obsłudze usług połączeniowych i bezpołączeniowych.</span></li>
+            <li><span style="color: black">     MAC <i>(ang. media access control</i> - sterowania dostępem do nośnika - zapewnia dostęp do nośnika sieci lokalnej i współpracuje przede wszystkim z warstwą fizyczną.</span></li>
+        </ul>
+        Urządzenia działające w tej warstwie to: most i przełącznik.</span>
+        </li>
+        <li><span style="color: black"><b>Warstwa 1: fizyczna</b><br>
+Fundamentem, na którym zbudowany jest model referencyjny OSI, jest jego warstwa fizyczna. Określa ona wszystkie składniki sieci niezbędne do obsługi elektrycznego, optycznego, radiowego wysyłania i odbierania sygnałów. Warstwa fizyczna składa się z czterech obszarów funkcjonalnych:
+<ul type="circle" style="color: purple">  
+ <li><span style="color: black">   mechanicznego,</span></li>
+        <li><span style="color: black">   elektrycznego,</span></li>
+        <li><span style="color: black">   funkcjonalnego,</span></li>
+        <li><span style="color: black">   proceduralnego.</span></li>
+        </ul>
+        Wspólnie obejmują one wszystkie mechanizmy potrzebne do obsługi transmisji danych, takie jak techniki sygnalizacyjne, napięcie elektryczne powodujące przepływ prądu elektrycznego przenoszącego sygnał, rodzaje nośników i odpowiadające im właściwości impedancji,
+        elektroniczne składniki kart sieciowych, a nawet fizyczny kształt złącza używanego do terminacji nośnika. Warstwa fizyczna przesyła i odbiera sygnały zaadresowane dla wszystkich protokołów jej stosu oraz aplikacji, które je wykorzystują. Musi
+        ona więc wykonywać kilka istotnych funkcji - w szczególności: Aby móc nadawać dane, musi ona:
+        <ul type="circle" style="color: purple">
+            <li><span style="color: black">  zamieniać dane znajdujące się w ramkach na strumienie binarne,</span></li>
+            <li><span style="color: black">  wykonywać taką metodę dostępu do nośnika, jakiej żąda warstwa łącza danych,</span></li>
+            <li><span style="color: black">  przesyłać ramki danych szeregowo (czyli bit po bicie) w postaci strumieni binarnych.</span></li>
+        </ul>
+        W celu odbierania danych konieczne jest natomiast:
+        <ul type="circle" style="color: purple">
+            <li><span style="color: black">  oczekiwanie na transmisje przychodzące do urządzenia hosta i do niego zaadresowane,</span></li>
+            <li><span style="color: black"> odbiór odpowiednio zaadresowanych strumieni,</span></li>
+            <li><span style="color: black">  przesyłanie binarnych strumieni do warstwy łącza danych w celu złożenia ich z powrotem w ramki.</span></li>
+        </ul>
+        Lista ta, jak widać, nie obejmuje żadnych sposobów weryfikowania integralności danych. Warstwa fizyczna nie posiada bowiem mechanizmu służącego rozpoznawaniu znaczenia wysyłanych, jak też otrzymywanych danych. Służy wyłącznie przesyłaniu logicznych zer
+        i jedynek. Warstwa fizyczna, w postaci określonej przez Model Referencyjny OSI, składa się ze wszystkich procesów, mechanizmów, elektroniki oraz protokołów, które potrzebne są urządzeniu obliczającemu w celu wysłania i odbierania binarnych strumieni
+        danych. W specyfikacji warstwy fizycznej technologii LAN zamieszczone są oczekiwania odnośnie wydajności nośnika łączącego komunikujące się ze sobą urządzenia. Model jednak nie określa samego rodzaju nośnika. </span>
+        </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

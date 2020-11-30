@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+</html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Serwery</title>
+</head>
+
+<body>
+
+    <p>Serwer plików umożliwia stworzenie centralnego repozytorium plików z odpowiednią kontrolą poziomu dostępu. Jeżeli na serwerze mają być udostępniane pliki – jako miejsce wymiany danych lub jako centralna składnica (np. plików instalacyjnych) – warto
+        dodać rolę „serwera plików”. Po skonfigurowaniu roli serwera plików administrator może:
+        <ul>
+            <li>sprecyzować udostępniane udziały, </li>
+            <li>określić limity nakładane na użytkownika i zdefiniować tzw. quoty, określające sposób blokowania miejsca</li>
+            <li>uruchomić usługę indeksowania oraz zdefiniować katalogi, które będą (lub nie) indeksowane – dzięki tej usłudze pliki wyszukiwane są znacznie szybciej</li>
+            <li>skonfigurować serwer DFS, aby w jednym miejscu zintegrować wiele różnych udziałów</li>
+
+        </ul>
+    </p>
+    <p>Serwer wydruków zapewnia użytkownikom dostęp do sieci. Jeżeli do serwera mają być dołączone drukarki (lub dodatkowe sprzętowe serwery wydruku), wtedy warto, by administrator dodał również rolę „serwera wydruku”. Po skonfigurowaniu serwera wydruków
+        można:
+        <ul>
+            <li>za pośrednictwem przeglądarki zarządzać drukarkami oraz zadaniami drukowania,
+                <li>
+                    zainstalować nowy, standardowy port drukarek dostosowany do obsługi większości drukarek</li>
+                wykorzystujących protokół TCP/IP,
+
+                <li> łatwo administrować, dzięki interfejsowi WMI, wszystkimi drukarkami podłączonymi do serwerów wydruku;</li>
+                <li> WMI Print Provider pozwala na tworzenie dowolnych skryptów administracyjnych w VBScript czy Jsript;</li>
+                skonfigurować specjalną witrynę, która pozwoli na to, by do instalacji drukarek na komputerze klienckim w
+                <li> intranecie wystarczało kliknięcie na odpowiedni link</li>
+                <li> komputery klienckie z zainstalowanym Windows XP mogą podłączać się do drukarki także za pośrednictwem adresu URL.</li>
+        </ul>
+    </p>
+    <p>Serwer aplikacji to podstawowy element infrastruktury, który pozwala na uruchamianie zaawansowanych aplikacji wykorzystujących moc danego serwera. W Windows 2003 Server dostępnych jest wiele składników tworzących nowoczesny, wydajny i bezpieczny serwer
+        aplikacji. Jeżeli serwer ma służyć do uruchamiania stron WWW i jeśli ma być na nim zainstalowany element rozbudowanej aplikacji trójwarstwowej, warto zainstalować rolę serwera aplikacyjnego. Jednak, jeżeli ma to być tylko serwer plików lub np.
+        kontroler domeny, wtedy instalowanie tej roli nie jest niezbędne. Windows 2003 Server z włączoną rolą „serwera aplikacyjnego” jest doskonałą platformą do uruchamiania rozproszonych aplikacji, systemów opartych na WWW czy usług Web. Po instalacji
+        roli serwera aplikacyjnego instalowane są m.in. usługi związane z serwerem WWW, czyli Internet Information Services (IIS) 6.0, wraz z wybranymi elementami takimi jak ASP czy ASP.NET. Windows 2003 Server zawiera zintegrowany, bezpieczny i skalowalny
+        serwer WWW, który można stosować zarówno do uruchamiania rozbudowanych aplikacji WWW przeznaczonych dla Intranetu, jak i do uruchomiania prostych, informacyjnych stron WWW. IIS jest także wymarzoną platformą do uruchamiania usług Web. IIS jest
+        również dobrym wyborem, gdy trzeba stworzyć platformę komunikacyjną – a warto pamiętać, że częścią IIS są elementy ułatwiające publikację dokumentów (jak chociażby WebDav czy FrontPage Server Extension) oraz rewelacyjną technologię ASP.NET. IIS
+        6.0 jest platformą, która dodatkowo zawiera wiele elementów wspierających tzw. rozwiązania hostingowe, gdzie na jednym fizycznym serwerze znajdują się równolegle kilka witryn (np. – należących do różnych podmiotów gospodarczych).
+    </p>
+    <p>Aby stworzyć serwer poczty elektronicznej, można wykorzystać komponenty obsługujące protokół POP3 (Post Office Protocol 3) oraz SMTP (Simple Mail Transfer Protocol). Najłatwiej można je skonfigurować, dodając rolę „serwera poczty” do Windows 2003
+        Server. POP3 pozwala na odczytywanie poczty przez programy klienckie (tak jak Microsoft Outlook). Można także za ich pomocą definiować skrzynki pocztowe, określać ich ograniczenia itp. SMTP jest protokołem pozwalającym na wymianę listów e-mail
+        z innymi serwerami pocztowymi. Jeżeli serwer ma służyć jako miejsce wymiany poczty elektronicznej, rola „serwera poczty” może okazać się przydatna. Warto podkreślić, że w poprzednich wersjach Windows, serwer SMTP był częścią IIS. Obecnie może
+        być instalowany niezależnie od serwera WWW. </p>
+    <p>Dzięki serwerowi usług terminalowych wielu użytkowników może zdalnie pracować na Windows 2003 Server. Klient chcący skorzystać z usług serwera terminali może wykorzystywać dowolną wersję Windows (także 3.11) czy MSDOS. Aplikacja dostępowa może być
+        także dostępna za pośrednictwem specjalnej strony WWW, która zainstaluje na komputerze klienckim odpowiednie kontrolki. Usługi terminalowe pozwalają administratorowi w sposób scentralizowany zarządzać aplikacjami – instaluje je (po prostu) na
+        jednym komputerze. Równocześnie każdy z klientów pracując zdalnie ma pewność, że pracuje na tej samej wersji aplikacji i ma dostęp do właściwych programów. Dzięki tym zmianom, sięgającym aż jądra systemu operacyjnego, serwer usług terminalowych
+        może obsługiwać równocześnie setki użytkowników, instalacje klastrowe itp.</p>
+    <p>
+
+    </p>
+    Dzięki serwerowi usług terminalowych wielu użytkowników może zdalnie pracować na Windows 2003 Server. Klient chcący skorzystać z usług serwera terminali może wykorzystywać dowolną wersję Windows (także 3.11) czy MSDOS. Aplikacja dostępowa może być także
+    dostępna za pośrednictwem specjalnej strony WWW, która zainstaluje na komputerze klienckim odpowiednie kontrolki. Usługi terminalowe pozwalają administratorowi w sposób scentralizowany zarządzać aplikacjami – instaluje je (po prostu) na jednym komputerze.
+    Równocześnie każdy z klientów pracując zdalnie ma pewność, że pracuje na tej samej wersji aplikacji i ma dostęp do właściwych programów. Dzięki tym zmianom, sięgającym aż jądra systemu operacyjnego, serwer usług terminalowych może obsługiwać równocześnie
+    setki użytkowników, instalacje klastrowe itp.
+    <p>
+        Rola kontrolera domeny polega na zarządzaniu centralnym katalogiem informacji o użytkownikach, domenach czy komputerach i usługach w sieci. Jeżeli administrator planuje wdrożenie Active Directory (usługi katalogowe), powinien dodać do serwera rolę „kontrolera
+        domeny Active Directory”. Warto pamiętać, że w drzewiastej strukturze katalogu może być wiele kontrolerów domeny. W zależności od potrzeb, instalowany serwer może zarządzać pewnym poddrzewem, czy też całym „lasem” połączonym relacją z innym „lasem”.
+        Może też pełnić rolę serwera zapasowego, który w razie kłopotów przejmie obowiązki innych maszyn. Po zainstalowaniu kontrolera domeny administrator może określić dokładne zasady bezpieczeństwa w sieci. Dzięki Active Directory możliwa jest prosta
+        dystrybucja zasad bezpieczeństwa do wszystkich klientów w sieci. Równocześnie katalog przechowuje wiele informacji – zarówno o użytkownikach, jak i sprzęcie czy komputerach. Dzięki Active Directory użytkownik może wyszukać np. najbliższą drukarkę,
+        która jest w stanie drukować w kolorze z zadaną rozdzielczością. Coraz więcej aplikacji dodaje swoje własne informacje do katalogu – np. podczas instalacji SQL Server 2000 w katalogu rejestrowane są informacje o tym serwerze.
+
+    </p>
+
+    <p>
+        Serwer DNS (Domain Name System) jest standardem, który pozwala na rozpoznawanie i tłumaczenie nazw w sieciach opartych na TCP/IP (również w Internecie). Dzięki DNS użytkownik może posługiwać się nazwami domen – zamiast adresami IP konkretnych serwerów.
+        To DNS wie, że jednym z adresów www.microsoft.com jest 207.46.134.190; dzięki mechanizmowi replikacji ta informacja jest przekazywana do wszystkich serwerów DNS. Jeżeli dana sieć ma być podłączona do Internetu i ma udostępniać pewne usługi, warto
+        dodać rolę „serwera DNS”. Jednak warto też o tym pamiętać już przy instalacji serwera, ponieważ od razu na początku można podać odpowiednią unikatową nazwę domeny DNS. W Windows 2003 Server DNS może być także centralnym sposobem rozpoznawania
+        6 nazw w sieci lokalnej. Może być także zintegrowany z Active Directory, a wtedy, w miarę dodawania nowych obiektów do katalogu, pojawiają się odpowiednie wpisy w serwerze DNS. Warto tu pamiętać, że w małych sieciach LAN serwer DNS nie jest niezbędny.
+        Może wystarczyć mechanizm rozpoznawania nazw oparty na mechanizmie NetBios i usłudze WINS. Po zainstalowaniu roli serwera DNS warto, by administrator określił zasady replikacji, przesyłania zapytań do innych serwerów czy też określił poziom bezpieczeństwa
+        (w tym np. wymagany sposób autoryzacji przy modyfikacji DNS).
+    </p>
+    <p>
+        DHCP to standard internetowy pozwalający na łatwą dystrybucję dynamicznie przydzielanych adresów IP w sieci korporacyjnej. Jeżeli administrator doda tę rolę do serwera Windows 2003 Server, nie musi wtedy ręcznie przypisywać adresów IP do poszczególnych
+        stacji roboczych. Także jeśli planowane jest przeprowadzanie transmisji multimedialnych z wykorzystaniem protokołów typu multicast, warto dodać tę rolę do serwera.
+    </p>
+</body>
